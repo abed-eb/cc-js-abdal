@@ -5680,11 +5680,10 @@ function pushSubmit(event) {
   }
 }
 
-function initCC(siteId) {
+export function initCC(siteId) {
   fpPromise
     .then((fp) => fp.get())
     .then((result) => {
-      alert(result.visitorId);
       initMatomo(result.visitorId, siteId);
     });
 
@@ -5703,4 +5702,4 @@ function initCC(siteId) {
   }
 }
 
-module.exports.initCC = initCC;
+// module.exports.initCC = initCC;
