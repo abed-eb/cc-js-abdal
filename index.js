@@ -2658,7 +2658,7 @@ function piwikJs() {
             "&url=" +
             t(b8(dQ)) +
             (bu.length ? "&urlref=" + t(b8(bu)) : "") +
-            (ac(bF) ? "&uid=" + t(bF) : "") +
+            (ac(bF) ? "&_uid=" + t(bF) : "") +
             "&_id=" +
             dH.uuid +
             "&_idn=" +
