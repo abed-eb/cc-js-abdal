@@ -15,7 +15,9 @@ Then, use it in your project:
 ```react
 import { initCC } from "cc-js-abdal";
 
-// Call initCC in the ComponentDidMount of the component which you want to track or call it in index.js or App.js once. Also, pass your site_id to it.
+// Call initCC() in the ComponentDidMount of the component which you want to track.
+// You can call initCC() in the index.js or app.js once to track whole project.
+// pass your site_id to initCC().
 
 // Class Component
     componentDidMount(){
@@ -31,55 +33,93 @@ import { initCC } from "cc-js-abdal";
 // Add custome-attribute="include-form-tracking" to the form which you want to track.
 // Add custome-attribute="include-content-tracking" to the input which you want to track.
 // Add custom-attribute="form-submit" to the submit button.
-     <form
+
+import { useState, useEffect } from "react";
+import { initCC } from "cc-js-abdal";
+
+const initialState = {
+  name: "",
+  family_name: "",
+  username: "",
+  email: "",
+};
+
+const Form = () => {
+  const [state, setState] = useState(initialState);
+    
+   useEffect(() => {
+    initCC(187);
+   }, []);
+   
+  const handleChange = (event) => {
+    let name = event.target.name;
+    let value = event.target.value;
+    setState((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
+
+  return (
+    <div>
+      <form
         id="signup"
         onSubmit={handleSubmit}
         custom-attribute="include-form-tracking"
       >
-        <label>
-          Name:
-          <input
-            custom-attribute="include-content-tracking"
-            type="text"
-            name="name"
-            onChange={handleChange}
-          />
-        </label>
+        <label>Name: </label>
+        <input
+          custom-attribute="include-content-tracking"
+          type="text"
+          name="name"
+          onChange={handleChange}
+        />
+
         <div style={{ width: "100%" }}></div>
-        <label>
-          Family Name:
-          <input
-            custom-attribute="include-content-tracking"
-            type="text"
-            name="family_name"
-            onChange={handleChange}
-          />
-        </label>
+
+        <label>Family Name: </label>
+        <input
+          custom-attribute="include-content-tracking"
+          type="text"
+          name="family_name"
+          onChange={handleChange}
+        />
+
         <div style={{ width: "100%" }}></div>
-        <label>
-          Username:
-          <input
-            custom-attribute="include-content-tracking"
-            type="text"
-            name="username"
-            onChange={handleChange}
-          />
-        </label>
+
+        <label>Username: </label>
+        <input
+          custom-attribute="include-content-tracking"
+          type="text"
+          name="username"
+          onChange={handleChange}
+        />
+
         <div style={{ width: "100%" }}></div>
-        <label>
-          email:
-          <input
-            custom-attribute="include-content-tracking"
-            type="email"
-            name="email"
-            onChange={handleChange}
-          />
-        </label>
+
+        <label>email: </label>
+
+        <input
+          custom-attribute="include-content-tracking"
+          type="email"
+          name="email"
+          onChange={handleChange}
+        />
+
         <div style={{ width: "100%" }}></div>
-        <button custom-attribute="form-submit" type="submit">
-          submit
-        </button>
+
+        <button custom-attribute="form-submit">submit</button>
       </form>
+    </div>
+  );
+};
+
+export default Form;
+
 
 ```
 
