@@ -1,7 +1,3 @@
-# Matomo Tracker [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url]
-
-> A wrapper for the Matomo Tracking HTTP API
-
 ## Usage
 
 First, install `matomo-tracker` as a dependency:
