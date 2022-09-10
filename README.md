@@ -1,6 +1,6 @@
 ## Usage
 
-First, install `matomo-tracker` as a dependency:
+First, install `cc-js-abdal` as a dependency:
 
 ```shell
 npm install --save cc-js-abdal
