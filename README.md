@@ -8,34 +8,37 @@ npm install --save cc-js-abdal
 
 Then, use it in your project:
 
+1. Call initCC(your_site_id) in the ComponentDidMount of any component which you want to track.
+2. You can call initCC(your_site_id) in the index.js or app.js once to track whole project.
+3. pass your site_id to initCC(your_site_id).
+
 ```react
 import { initCC } from "cc-js-abdal";
 
-// Call initCC(your_site_id) in the ComponentDidMount of any component which you want to track.
-// You can call initCC() in the index.js or app.js once to track whole project.
-// pass your site_id to initCC(your_site_id).
+Class Components
+componentDidMount(){
+   initCC(your_site_id); 
+};
 
-// Class Component
-    componentDidMount(){
-       initCC(your_site_id); 
-    };
-// Functional Component
-    useEffect(() => {
-      initCC(your_site_id);
-    }, []);
-    
-// Create your form
-// Add property "name" to your <form> tag, 
+Functional Components
+useEffect(() => {
+  initCC(your_site_id);
+}, []);
+```
+
+4. Create your form
+5. Add property "name" to your <form> tag, 
    *Note: your form name must contains "signup" word, examples: signup-form, my-signup, ...
    *Note: DO NOT USE SPACE OR DASH FOR "SIGNUP" (sign-up and sign up are not allowed)
-// Add custome-attribute="include-form-tracking" to the form which you want to track.
-// Add custome-attribute="include-content-tracking" to the input which you want to track its content.
+6. Add custome-attribute="include-form-tracking" to the form which you want to track.
+7. Add custome-attribute="include-content-tracking" to the input which you want to track its content.
    *NOTE: your signup form must include an input with the name="email" (do not use "username", etc)
    *NOTE: you must add custome-attribute="include-content-tracking" for the email field
    *NOTE: its ok to not include content of private fields like password, etc
-// Add custom-attribute="form-submit" or type="submit" to the submit button.
-// Use onSubmit={submitHandler} for you button NOT onClick.
-
+8. Add custom-attribute="form-submit" or type="submit" to the submit button.
+8. Use onSubmit={submitHandler} for you button NOT onClick.
+    
+```
 import { useState, useEffect } from "react";
 import { initCC } from "cc-js-abdal";
 
@@ -121,13 +124,11 @@ const Form = () => {
 };
 
 export default Form;
+```
 
-```
-Other Examples (MUI and etc)
-```
 *If you are not using pure HTML tags, consider adding the mentioned attributes to the main HTML tags (form, input and button).
  Pay attention to the following example of MUI TextField.
- 
+```
      <TextField
       //add properties here
       inputProps={{
