@@ -11,9 +11,9 @@ Then, use it in your project:
 ```react
 import { initCC } from "cc-js-abdal";
 
-// Call initCC() in the ComponentDidMount of the component which you want to track.
+// Call initCC(your_site_id) in the ComponentDidMount of any component which you want to track.
 // You can call initCC() in the index.js or app.js once to track whole project.
-// pass your site_id to initCC().
+// pass your site_id to initCC(your_site_id).
 
 // Class Component
     componentDidMount(){
@@ -25,10 +25,16 @@ import { initCC } from "cc-js-abdal";
     }, []);
     
 // Create your form
-// Add id="signup" to the form
+// Add property "name" to your <form> tag, 
+   *Note: your form name must contains "signup" word, examples: signup-form, my-signup, ...
+   *Note: DO NOT USE SPACE OR DASH FOR "SIGNUP" (sign-up and sign up are not allowed)
 // Add custome-attribute="include-form-tracking" to the form which you want to track.
-// Add custome-attribute="include-content-tracking" to the input which you want to track.
-// Add custom-attribute="form-submit" to the submit button.
+// Add custome-attribute="include-content-tracking" to the input which you want to track its content.
+   *NOTE: your signup form must include an input with the name="email" (do not use "username", etc)
+   *NOTE: you must add custome-attribute="include-content-tracking" for the email field
+   *NOTE: its ok to not include content of private fields like password, etc
+// Add custom-attribute="form-submit" or type="submit" to the submit button.
+// Use onSubmit={submitHandler} for you button NOT onClick.
 
 import { useState, useEffect } from "react";
 import { initCC } from "cc-js-abdal";
