@@ -126,7 +126,7 @@ const Form = () => {
 export default Form;
 ```
 
-*If you are not using pure HTML tags, consider adding the mentioned attributes to the main HTML tags (form, input and button).
+* If you are not using pure HTML tags, consider adding the mentioned attributes to the main HTML tags (form, input and button).
  Pay attention to the following example of MUI TextField.
 ```
      <TextField
