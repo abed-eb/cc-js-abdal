@@ -28,13 +28,13 @@ useEffect(() => {
 
 4. Create your form
 5. Add property "name" to your <form> tag, 
-   *Note: your form name must contains "signup" word, examples: signup-form, my-signup, ...
-   *Note: DO NOT USE SPACE OR DASH FOR "SIGNUP" (sign-up and sign up are not allowed)
+   * Note: your form name must contains "signup" word, examples: signup-form, my-signup, ...
+   * Note: DO NOT USE SPACE OR DASH FOR "SIGNUP" (sign-up and sign up are not allowed)
 6. Add custome-attribute="include-form-tracking" to the form which you want to track.
 7. Add custome-attribute="include-content-tracking" to the input which you want to track its content.
-   *NOTE: your signup form must include an input with the name="email" (do not use "username", etc)
-   *NOTE: you must add custome-attribute="include-content-tracking" for the email field
-   *NOTE: its ok to not include content of private fields like password, etc
+   * NOTE: your signup form must include an input with the name="email" (do not use "username", etc)
+   * NOTE: you must add custome-attribute="include-content-tracking" for the email field
+   * NOTE: its ok to not include content of private fields like password, etc
 8. Add custom-attribute="form-submit" or type="submit" to the submit button.
 8. Use onSubmit={submitHandler} for you button NOT onClick.
     
