@@ -122,6 +122,24 @@ const Form = () => {
 
 export default Form;
 
+```
+Other Examples (MUI and etc)
+```
+*If you are not using pure HTML tags, consider adding the mentioned attributes to the main HTML tags (form, input and button).
+ Pay attention to the following example of MUI TextField.
+ 
+     <TextField
+      //add properties here
+      inputProps={{
+        "custom-attribute": "include-content-tracking",
+        name: "email",
+      }}
+      //add properties here
+      type="text"
+      value={values.username}
+      onChange={handleChange)}
+      label="email"
+    />
 
 ```
 That's it.
