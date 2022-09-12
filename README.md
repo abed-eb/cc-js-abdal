@@ -5,8 +5,7 @@ First, install `cc-js-abdal` as a dependency:
 ```shell
 npm install --save cc-js-abdal
 ```
-
-Then, use it in your project:
+### Loading and initializing CC package
 
 1. Call initCC(your_site_id) in the ComponentDidMount for any component which you want to track its form. 
    * initCC only loads and initialize our library, for adding trackers follow bellow steps
@@ -15,20 +14,22 @@ Then, use it in your project:
    * You can get your_site_id from app.crossclassify.com after creating a new app in your project.
 
 ```react
+// Loading and initializing CC package
 import { initCC } from "cc-js-abdal";
 
-Class Components
+// Class Components
 componentDidMount(){
    //get your_site_id from app.crossclassify.com, after creating an app in a project
-   initCC(your_site_id); 
+   initCC(your_site_id_from_app.crossclassify.com); 
 };
 
-Functional Components
+// Functional Components
 useEffect(() => {
   // get your_site_id from app.crossclassify.com, after creating an app in a project
-  initCC(your_site_id);
+  initCC(your_site_id_from_app.crossclassify.com);
 }, []);
 ```
+### Track the form
 
 4. Create your form.
 5. Add property "name" to your <form> tag. 
@@ -36,8 +37,8 @@ useEffect(() => {
    * Note: DO NOT USE SPACE OR DASH FOR "SIGNUP" (sign-up and sign up are not allowed)
 6. Add custom-attribute="include-form-tracking" to the form which you want to track.
 7. Add custom-attribute="include-content-tracking" to the input which you want to track its content.
-   * NOTE: Your signup form must include an input with the name="email" (do not use "username", etc)
-   * NOTE: You must add custome-attribute="include-content-tracking" for the email field
+   * NOTE: Your signup form must include an input with the name="email".
+   * NOTE: You must add custom-attribute="include-content-tracking" for the email input
    * NOTE: Its ok to not including content of private fields like password, etc.
 8. Add custom-attribute="form-submit" or type="submit" to the submit button.
 8. Use onSubmit={submitHandler} for you button NOT onClick={clickHandler}.
@@ -77,11 +78,18 @@ const Form = () => {
 
   return (
     <div>
+      // Your <form> name must contains "signup" word, examples: "signup-form", "my-signup", ... .
+      // DO NOT USE SPACE OR DASH FOR "SIGNUP" (sign-up and sign up are not allowed)
+      // Add custom-attribute="include-form-tracking" to the form which you want to track.
       <form
-        id="signup"
+        name="must-contain-signup"
         onSubmit={handleSubmit}
         custom-attribute="include-form-tracking"
       >
+        // Your signup form must include an input with the name="email".
+        // You must add custom-attribute="include-content-tracking" for the email input and any other input you may want to track its content.
+        // Its ok to not including content of private fields like password, etc.
+        
         <label>Name: </label>
         <input
           custom-attribute="include-content-tracking"
@@ -120,9 +128,10 @@ const Form = () => {
           name="email"
           onChange={handleChange}
         />
-
         <div style={{ width: "100%" }}></div>
-
+        
+        // Add custom-attribute="form-submit" or type="submit" to the submit button.
+        // Use onSubmit={submitHandler} for you button NOT onClick={clickHandler}.
         <button custom-attribute="form-submit">submit</button>
       </form>
     </div>
@@ -131,24 +140,31 @@ const Form = () => {
 
 export default Form;
 ```
-
+### An example with Material UI (MUI) "Form"
+      
 * If you are not using pure HTML tags (form, input and button), consider adding the mentioned attributes to the rendered HTML tags like using "inputProps".
  Pay attention to the following example of Matrial UI (MUI) "TextField".
 ```
-   //simple MUI "textField" tracking integration
+   //simple MUI "Form" tracking integration
+  <Box
+    sx={{
+      "& .MuiTextField-root": {maxWidth: "100%" },
+    }}
+    component="form"
+  >   
      <TextField
-      //add properties here
+      // Adding properties to the HTML input tag using inputProps
       inputProps={{
         "custom-attribute": "include-content-tracking",
         name: "email",
       }}
-      //add properties here
+      // Adding properties to the HTML input tag using inputProps
       type="text"
-      value={values.username}
-      onChange={handleChange)}
+      value={email}
+      onChange={handleChange}
       label="email"
     />
-
+  </Box>     
 ```
 Now go to dashboard and check if your signup submits show in the "Registrations" menu
 Congratulations! your done.
