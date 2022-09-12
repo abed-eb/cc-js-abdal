@@ -164,7 +164,19 @@ export default Form;
       onChange={handleChange}
       label="email"
     />
-  </Box>     
+    <Button
+    sx={{ m: 1 }}
+    id="login-btn"
+    // onSubmit={onLogin}
+    onSubmit={onLogin}
+    variant="contained"
+    size="large"
+    type="submit"
+    >
+    Signup
+    </Button>
+  </Box>
+
 ```
 Now go to dashboard and check if your signup submits show in the "Registrations" menu
 Congratulations! your done.
