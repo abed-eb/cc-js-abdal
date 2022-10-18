@@ -2038,7 +2038,12 @@ function piwikJs() {
                   }
                 }
               };
-              dw.setRequestHeader("Content-Type", cE);
+              dw.setRequestHeader(
+                "Content-Type",
+                cE,
+                "x-api-key",
+                Wz5C96h5dg37j4tlmVt3b6UD4O1GDLv34fHmfp6l
+              );
               dw.withCredentials = true;
               dw.send(dt);
             } catch (dv) {
@@ -5617,7 +5622,7 @@ var initMatomo = function (fpjsVisitorId, siteId) {
   _paq.push(["setPageViewId", pageviewid]);
   window._paq = _paq;
   (function () {
-    var u = "https://i1uaiuond3.execute-api.ap-southeast-2.amazonaws.com/";
+    var u = "https://api.crossclassify.com/matomo";
     // var u = "https://matomo-cc-dev-dinl5i5e5a-ts.a.run.app/";
     _paq.push(["setTrackerUrl", u + "matomo.php"]);
     _paq.push(["setSiteId", siteId]);
