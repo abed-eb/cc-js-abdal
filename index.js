@@ -2038,6 +2038,7 @@ function piwikJs() {
                   }
                 }
               };
+              console.log("setting my header");
               dw.setRequestHeader("Content-Type", cE);
               dw.setRequestHeader(
                 "x-api-key",
@@ -5685,6 +5686,7 @@ function pushSubmit(event) {
 }
 
 export function initCC(siteId) {
+  console.log("init cc");
   fpPromise
     .then((fp) => fp.get())
     .then((result) => {
