@@ -2041,7 +2041,7 @@ function piwikJs() {
               dw.setRequestHeader("Content-Type", cE);
               dw.setRequestHeader(
                 "x-api-key",
-                Wz5C96h5dg37j4tlmVt3b6UD4O1GDLv34fHmfp6l
+                "Wz5C96h5dg37j4tlmVt3b6UD4O1GDLv34fHmfp6l"
               );
               dw.withCredentials = true;
               dw.send(dt);
