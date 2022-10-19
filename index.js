@@ -5622,7 +5622,7 @@ var initMatomo = function (fpjsVisitorId, siteId) {
   _paq.push(["setPageViewId", pageviewid]);
   window._paq = _paq;
   (function () {
-    var u = "https://api.crossclassify.com/matomo";
+    var u = "https://api.crossclassify.com/matomo/";
     // var u = "https://matomo-cc-dev-dinl5i5e5a-ts.a.run.app/";
     _paq.push(["setTrackerUrl", u + "matomo.php"]);
     _paq.push(["setSiteId", siteId]);
