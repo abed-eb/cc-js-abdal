@@ -1966,6 +1966,7 @@ function piwikJs() {
           }
           var dv = {
             type: "application/x-www-form-urlencoded; charset=UTF-8",
+            "x-api-key": "Wz5C96h5dg37j4tlmVt3b6UD4O1GDLv34fHmfp6l",
           };
           var dA = false;
           var dt = aI;
