@@ -2022,12 +2022,16 @@ function piwikJs() {
             }
             var dx;
             try {
+              console.log("try to open");
               var dw = W.XMLHttpRequest
                 ? new W.XMLHttpRequest()
                 : W.ActiveXObject
                 ? new ActiveXObject("Microsoft.XMLHTTP")
                 : null;
+              console.log(dw);
               dw.open("POST", aI, true);
+              console.log("after open");
+              console.log(aI);
               dw.onreadystatechange = function () {
                 if (
                   this.readyState === 4 &&
