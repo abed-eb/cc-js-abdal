@@ -1982,7 +1982,7 @@ function piwikJs() {
             console.log(dA);
             fetch(dt, {
               keepalive: true,
-              method: "POST",
+              method: "GET",
               headers: {
                 "x-api-key": "Wz5C96h5dg37j4tlmVt3b6UD4O1GDLv34fHmfp6l",
                 "Content-Type":
