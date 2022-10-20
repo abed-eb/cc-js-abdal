@@ -1978,6 +1978,7 @@ function piwikJs() {
             }
             // dA = g.sendBeacon(dt, ds);
             //fetch
+            console.log(dt);
             fetch(dt, {
               keepalive: true,
               method: "POST",
