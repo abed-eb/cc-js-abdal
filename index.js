@@ -2011,13 +2011,16 @@ function piwikJs() {
 
         function dd(dt, du, ds) {
           if (!M(ds) || null === ds) {
+            console.log("if 0");
             ds = true;
           }
           if (m && bc(dt, du, ds)) {
+            console.log("if 1");
             return;
           }
           setTimeout(function () {
             if (m && bc(dt, du, ds)) {
+              console.log("if 2");
               return;
             }
             var dx;
@@ -2070,6 +2073,7 @@ function piwikJs() {
               dw.withCredentials = true;
               dw.send(dt);
             } catch (dv) {
+              console.log("catch");
               dx = m && bc(dt, du, ds);
               if (!dx && ds) {
                 cv(dt, du);
