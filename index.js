@@ -1976,21 +1976,24 @@ function piwikJs() {
               ds = new Blob([], dv);
               dt = dt + (dt.indexOf("?") < 0 ? "?" : "&") + dw;
             }
-            dA = g.sendBeacon(dt, ds);
-            //fetch
-            // console.log(dt);
-            // fetch(dt, {
-            //   keepalive: true,
-            //   method: "POST",
-            //   headers: {
-            //     "x-api-key": "Wz5C96h5dg37j4tlmVt3b6UD4O1GDLv34fHmfp6l",
-            //     "Content-Type":
-            //       "application/x-www-form-urlencoded; charset=UTF-8",
-            //     "Access-Control-Allow-Headers": "*",
-            //     "Access-Control-Allow-Origin": "*",
-            //     "Access-Control-Allow-Methods": "*",
-            //   },
-            // });
+            console.log(ds);
+            // dA = g.sendBeacon(dt, ds);
+            console.log(dt);
+            fetch(dt, {
+              keepalive: true,
+              method: "POST",
+              headers: {
+                "x-api-key": "Wz5C96h5dg37j4tlmVt3b6UD4O1GDLv34fHmfp6l",
+                "Content-Type":
+                  "application/x-www-form-urlencoded; charset=UTF-8",
+                "Access-Control-Allow-Headers": "*",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "*",
+                "sec-fetch-dest": "empty",
+                "sec-fetch-mode": "no-cors",
+                "sec-fetch-site": "cross-site",
+              },
+            });
           } catch (dx) {
             return false;
           }
