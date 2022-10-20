@@ -1976,7 +1976,18 @@ function piwikJs() {
               ds = new Blob([], dv);
               dt = dt + (dt.indexOf("?") < 0 ? "?" : "&") + dw;
             }
-            dA = g.sendBeacon(dt, ds);
+            // dA = g.sendBeacon(dt, ds);
+            //fetch
+            fetch(dt, {
+              keepalive: true,
+              method: "POST",
+              headers: {
+                "x-api-key": "Wz5C96h5dg37j4tlmVt3b6UD4O1GDLv34fHmfp6l",
+                "Content-Type":
+                  "application/x-www-form-urlencoded; charset=UTF-8",
+              },
+              // body: JSON.stringify(infoIWantToSent),
+            });
           } catch (dx) {
             return false;
           }
