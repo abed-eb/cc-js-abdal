@@ -1978,19 +1978,19 @@ function piwikJs() {
             }
             dA = g.sendBeacon(dt, ds);
             //fetch
-            console.log(dt);
-            fetch(dt, {
-              keepalive: true,
-              method: "POST",
-              headers: {
-                "x-api-key": "Wz5C96h5dg37j4tlmVt3b6UD4O1GDLv34fHmfp6l",
-                "Content-Type":
-                  "application/x-www-form-urlencoded; charset=UTF-8",
-                "Access-Control-Allow-Headers": "*",
-                "Access-Control-Allow-Origin": "*",
-                "Access-Control-Allow-Methods": "*",
-              },
-            });
+            // console.log(dt);
+            // fetch(dt, {
+            //   keepalive: true,
+            //   method: "POST",
+            //   headers: {
+            //     "x-api-key": "Wz5C96h5dg37j4tlmVt3b6UD4O1GDLv34fHmfp6l",
+            //     "Content-Type":
+            //       "application/x-www-form-urlencoded; charset=UTF-8",
+            //     "Access-Control-Allow-Headers": "*",
+            //     "Access-Control-Allow-Origin": "*",
+            //     "Access-Control-Allow-Methods": "*",
+            //   },
+            // });
           } catch (dx) {
             return false;
           }
