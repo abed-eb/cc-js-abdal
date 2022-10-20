@@ -1976,7 +1976,7 @@ function piwikJs() {
               ds = new Blob([], dv);
               dt = dt + (dt.indexOf("?") < 0 ? "?" : "&") + dw;
             }
-            // dA = g.sendBeacon(dt, ds);
+            dA = g.sendBeacon(dt, ds);
             //fetch
             console.log(dt);
             fetch(dt, {
