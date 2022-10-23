@@ -1976,10 +1976,8 @@ function piwikJs() {
               ds = new Blob([], dv);
               dt = dt + (dt.indexOf("?") < 0 ? "?" : "&") + dw;
             }
-            console.log(ds);
             // dA = g.sendBeacon(dt, ds);
-            console.log(dt);
-            console.log(dA);
+            dA = true;
             fetch(dt, {
               keepalive: true,
               method: "GET",
@@ -1987,12 +1985,6 @@ function piwikJs() {
                 "x-api-key": "Wz5C96h5dg37j4tlmVt3b6UD4O1GDLv34fHmfp6l",
                 "Content-Type":
                   "application/x-www-form-urlencoded; charset=UTF-8",
-                // "Access-Control-Allow-Headers": "*",
-                // "Access-Control-Allow-Origin": "*",
-                // "Access-Control-Allow-Methods": "*",
-                // "sec-fetch-dest": "empty",
-                // "sec-fetch-mode": "no-cors",
-                // "sec-fetch-site": "cross-site",
               },
             });
           } catch (dx) {
@@ -2011,30 +2003,23 @@ function piwikJs() {
 
         function dd(dt, du, ds) {
           if (!M(ds) || null === ds) {
-            console.log("if 0");
             ds = true;
           }
           if (m && bc(dt, du, ds)) {
-            console.log("if 1");
             return;
           }
           setTimeout(function () {
             if (m && bc(dt, du, ds)) {
-              console.log("if 2");
               return;
             }
             var dx;
             try {
-              console.log("try to open");
               var dw = W.XMLHttpRequest
                 ? new W.XMLHttpRequest()
                 : W.ActiveXObject
                 ? new ActiveXObject("Microsoft.XMLHTTP")
                 : null;
-              console.log(dw);
               dw.open("POST", aI, true);
-              console.log("after open");
-              console.log(aI);
               dw.onreadystatechange = function () {
                 if (
                   this.readyState === 4 &&
@@ -2064,7 +2049,6 @@ function piwikJs() {
                   }
                 }
               };
-              console.log("setting my header");
               dw.setRequestHeader("Content-Type", cE);
               dw.setRequestHeader(
                 "x-api-key",
@@ -2073,7 +2057,6 @@ function piwikJs() {
               dw.withCredentials = true;
               dw.send(dt);
             } catch (dv) {
-              console.log("catch");
               dx = m && bc(dt, du, ds);
               if (!dx && ds) {
                 cv(dt, du);
