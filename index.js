@@ -2,7 +2,7 @@ const FingerprintJS = require("@fingerprintjs/fingerprintjs");
 
 // Initialize the agent at application startup.
 const fpPromise = FingerprintJS.load();
-
+const xApiKey = "";
 // const SERVER_API_KEY = "iJhQgk9AG5w91l0bmSH1";
 function piwikJs() {
   /*!!
@@ -1966,7 +1966,7 @@ function piwikJs() {
           }
           var dv = {
             type: "application/x-www-form-urlencoded; charset=UTF-8",
-            "x-api-key": "Wz5C96h5dg37j4tlmVt3b6UD4O1GDLv34fHmfp6l",
+            "x-api-key": xApiKey,
           };
           var dA = false;
           var dt = aI;
@@ -1982,7 +1982,7 @@ function piwikJs() {
               keepalive: true,
               method: "GET",
               headers: {
-                "x-api-key": "Wz5C96h5dg37j4tlmVt3b6UD4O1GDLv34fHmfp6l",
+                "x-api-key": xApiKey,
                 "Content-Type":
                   "application/x-www-form-urlencoded; charset=UTF-8",
               },
@@ -2050,10 +2050,7 @@ function piwikJs() {
                 }
               };
               dw.setRequestHeader("Content-Type", cE);
-              dw.setRequestHeader(
-                "x-api-key",
-                "Wz5C96h5dg37j4tlmVt3b6UD4O1GDLv34fHmfp6l"
-              );
+              dw.setRequestHeader("x-api-key", xApiKey);
               dw.withCredentials = true;
               dw.send(dt);
             } catch (dv) {
@@ -5633,15 +5630,8 @@ var initMatomo = function (fpjsVisitorId, siteId) {
   window._paq = _paq;
   (function () {
     var u = "https://api.crossclassify.com/matomo/";
-    // var u = "https://matomo-cc-dev-dinl5i5e5a-ts.a.run.app/";
     _paq.push(["setTrackerUrl", u + "matomo.php"]);
     _paq.push(["setSiteId", siteId]);
-    // var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
-    // g.type = 'text/javascript';
-    // g.async = true;
-    // g.defer = true;
-    // g.src = u + 'matomo.js';
-    // s.parentNode.insertBefore(g, s);
     piwikJs();
     formAnalyticsJs();
     finalJs();
@@ -5677,8 +5667,6 @@ function pushElementContent(elementName, elementValue) {
 }
 
 function pushSubmit(event) {
-  // console.log('submitting');
-  //    event.preventDefault()
   var _paq = window._paq || [];
 
   for (let element of this.querySelectorAll(
@@ -5695,8 +5683,8 @@ function pushSubmit(event) {
   }
 }
 
-export function initCC(siteId) {
-  console.log("init cc");
+export function initXC(siteId, apiKey) {
+  xApiKey = apiKey;
   fpPromise
     .then((fp) => fp.get())
     .then((result) => {
@@ -5717,5 +5705,3 @@ export function initCC(siteId) {
     form.addEventListener("submit", pushSubmit);
   }
 }
-
-// module.exports.initCC = initCC;
