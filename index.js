@@ -2,7 +2,7 @@ const FingerprintJS = require("@fingerprintjs/fingerprintjs");
 
 // Initialize the agent at application startup.
 const fpPromise = FingerprintJS.load();
-const xApiKey = "";
+var xApiKey = "";
 // const SERVER_API_KEY = "iJhQgk9AG5w91l0bmSH1";
 function piwikJs() {
   /*!!
